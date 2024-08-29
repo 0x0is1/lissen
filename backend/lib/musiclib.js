@@ -11,7 +11,8 @@ class ServiceProvider {
             }
         });
         const data = await response.json();
-        return data;        
+        console.log(`${this.baseURL}${dir}`)
+        return data;
     }
     
     async getLaunchData() {
