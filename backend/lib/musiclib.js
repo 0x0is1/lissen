@@ -68,6 +68,8 @@ class ServiceProvider {
     async getStationById(name, count=20) {
         const station_id = await this.request(`webradio.createFeaturedStation&language=hindi&pid=&query=&name=${name.replaceAll(" ", "+")}&mode=&artistid=&_format=json&_marker=0&ctx=web6dot0&api_version=4`);
         const data = await this.request(`webradio.getSong&stationid=${station_id.stationid}&k=${count}&next=1&_format=json&_marker=0&ctx=web6dot0&api_version=4`);
+        console.log(station_id)
+        console.log(data)
         return data;
     }
     
